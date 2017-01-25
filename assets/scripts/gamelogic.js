@@ -4,6 +4,9 @@ let currentPlayer = "x";
 
 let resettingArray = ['','','','','','','','',''];
 
+
+
+  //  decidePlayer
 const decidePlayer = function(){
  let XnO = 0;
   for(let i = 0; i < finalResult.length; i++){
@@ -24,56 +27,42 @@ const decidePlayer = function(){
 };
 
 
+ const findWinner = function( ){
+   if ((finalResult[0] === "x" && finalResult[1] === "x" && finalResult[2] === "x") ||
+      (finalResult[3] === "x" && finalResult[4] === "x" && finalResult[5] === "x") ||
+      (finalResult[6] === "x" && finalResult[7] === "x" && finalResult[8] === "x") ||
+      (finalResult[0] === "x" && finalResult[3] === "x" && finalResult[6] === "x") ||
+      (finalResult[1] === "x" && finalResult[4] === "x" && finalResult[7] === "x") ||
+      (finalResult[2] === "x" && finalResult[5] === "x" && finalResult[8] === "x") ||
+      (finalResult[0] === "x" && finalResult[4] === "x" && finalResult[8] === "x") ||
+      (finalResult[2] === "x" && finalResult[4] === "x" && finalResult[6] === "x")) {
+        finalResult = resettingArray;
+        console.log("x wins");
+      } else if ((finalResult[0] === "o" && finalResult[1] === "o" && finalResult[2] === "o") ||
+         (finalResult[3] === "o" && finalResult[4] === "o" && finalResult[5] === "o") ||
+         (finalResult[6] === "o" && finalResult[7] === "o" && finalResult[8] === "o") ||
+         (finalResult[0] === "o" && finalResult[3] === "o" && finalResult[6] === "o") ||
+         (finalResult[1] === "o" && finalResult[4] === "o" && finalResult[7] === "o") ||
+         (finalResult[2] === "o" && finalResult[5] === "o" && finalResult[8] === "o") ||
+         (finalResult[0] === "o" && finalResult[4] === "o" && finalResult[8] === "o") ||
+         (finalResult[2] === "o" && finalResult[4] === "o" && finalResult[6] === "o")){
+         finalResult = resettingArray;
+         finalResult = resettingArray;
+         }
 
- const horizontalResult = function( ){
-   if (finalResult[0] === finalResult[1] && finalResult[1] === finalResult[2] ) {
-     console.log("x wins");
-     return finalResult[0] + " wins";
-   }else if(finalResult[3] === finalResult[4] && finalResult[4] === finalResult[5]) {
-     return finalResult[3] + "wins";
-   }else if(finalResult[6] === finalResult[7] && finalResult[7] === finalResult[8]) {
-     return finalResult[6] + " wins";
-   }
-  //  return false;
- };
-
-
- const verticalResult = function( ){
-   if (finalResult[0] === finalResult[3] && finalResult[3] === finalResult[6] ) {
-     return finalResult[0] + "wins";
-   }else if(finalResult[1] === finalResult[4] && finalResult[4] === finalResult[7]) {
-     return finalResult[1] + "wins";
-   }else if(finalResult[2] === finalResult[5] && finalResult[5] === finalResult[8]) {
-     return finalResult[2] + " wins";
-   }
-  //  return false;
- };
-
- const diagonalResult = function( ){
-   if (finalResult[0] === finalResult[4] && finalResult[4] === finalResult[8] ) {
-     return finalResult[0] + " wins";
-   }else if(finalResult[2] === finalResult[4] && finalResult[4] === finalResult[6]) {
-     return finalResult[2] + " wins";
-   }
-  //  return false;
- };
+};
 
 
- const allFunctions = function() {
-   horizontalResult();
-   verticalResult();
-   diagonalResult();
-
-
- };
-
+//
  //function to player
  const gamePlay = function(number){
-   finalResult[number] = currentPlayer;
-  console.log(finalResult);
-  decidePlayer();
-  //  decidePlayer();
-   return allFunctions(finalResult);
+   if(finalResult[number] !== 'x' &&finalResult[number] !== 'x'){
+     finalResult[number] = currentPlayer;
+    console.log(finalResult);
+    decidePlayer();
+     return findWinner();
+   }
+
  };
 
 module.export = {
