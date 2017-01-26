@@ -48,23 +48,26 @@ const decidePlayer = function(){
          (finalResult[0] === "o" && finalResult[4] === "o" && finalResult[8] === "o") ||
          (finalResult[2] === "o" && finalResult[4] === "o" && finalResult[6] === "o")){
          finalResult = resettingArray;
-         finalResult = resettingArray;
+         console.log("o wins");
          }
 
 };
 
-
-
- //function to player
+ //function to player // number is the div att of html
  const gamePlay = function(number){
-   if(finalResult[number] !== 'x' &&finalResult[number] !== 'x'){
-     finalResult[number] = currentPlayer;
-    console.log(finalResult);
-    decidePlayer();
-     return findWinner();
+   if(finalResult[number.data("position")] !== 'x' &&finalResult[number.data("position")] !== 'x'){
+     finalResult[number.data("position")] = currentPlayer;
+     console.log(finalResult);
+
    }
+   if(number.text() !== "x" && number.text() !== "o"){
+     number.text(currentPlayer);
+     console.log(number.innerHtml);
+   }
+   decidePlayer();
+   findWinner();
  };
 
  module.exports = {
-  gamePlay
+  gamePlay,
  };
