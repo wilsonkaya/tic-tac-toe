@@ -14,11 +14,16 @@ $(() => {
 const eventsGame = require('./gamelogic');
 
 $(() => {
-  $(".square").on("click", function(event) {
+  $("#game-board").on("click", function(event) {
     event.preventDefault();
     // let location = $(this).data("position") teh  I can use  location as attribute
-    let location = $(this);
-    eventsGame.gamePlay(location);
+
+    eventsGame.gamePlay(event.target);
 
   });
+});
+
+//
+$(() => {
+  $("#reset").on("click",eventsGame.resetTheBoard);
 });
