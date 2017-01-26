@@ -1,9 +1,8 @@
 "use strict";
 let finalResult = ['','','','','','','','',''];
 let currentPlayer = "x";
-
 let resettingArray = ['','','','','','','','',''];
-
+let resettingGame = false;
 
 
   //  decidePlayer
@@ -16,8 +15,10 @@ const decidePlayer = function(){
   }
  if(XnO % 2 === 0){
    currentPlayer = 'x';
- }else if (XnO % 2 ){
+   console.log(currentPlayer)
+ }else if (XnO % 2 === 1 ){
    currentPlayer = 'o';
+   console.log(currentPlayer)
  }
  if(XnO === 9){
    console.log("game ends");
@@ -55,11 +56,11 @@ const decidePlayer = function(){
 
  //function to player // number is the div att of html
  const gamePlay = function(number){
-   if(finalResult[number.data("position")] !== 'x' &&finalResult[number.data("position")] !== 'x'){
+   if(finalResult[number.data("position")] !== "o" && finalResult[number.data("position")] !== "x"){
      finalResult[number.data("position")] = currentPlayer;
      console.log(finalResult);
-
    }
+
    if(number.text() !== "x" && number.text() !== "o"){
      number.text(currentPlayer);
      console.log(number.innerHtml);
