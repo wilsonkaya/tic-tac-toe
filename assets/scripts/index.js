@@ -23,7 +23,11 @@ $(() => {
   });
 });
 
-//
-$(() => {
-  $("#reset").on("click",eventsGame.resetTheBoard);
-});
+// //
+// $(() => {
+//   $("#reset").on("click",eventsGame.resetTheBoard);
+// });
+
+
+//This will be running auth files
+// const authEvents = require('./auth/events.js');
