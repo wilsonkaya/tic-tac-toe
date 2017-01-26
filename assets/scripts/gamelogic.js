@@ -20,6 +20,7 @@ const decidePlayer = function(){
    currentPlayer = 'o';
  }
  if(XnO === 9){
+   console.log("game ends");
    finalResult = resettingArray;
    currentPlayer = 'x';
  }
@@ -53,7 +54,7 @@ const decidePlayer = function(){
 };
 
 
-//
+
  //function to player
  const gamePlay = function(number){
    if(finalResult[number] !== 'x' &&finalResult[number] !== 'x'){
@@ -62,9 +63,8 @@ const decidePlayer = function(){
     decidePlayer();
      return findWinner();
    }
-
  };
 
-module.export = {
- gamePlay,
-};
+ module.exports = {
+  gamePlay
+ };
