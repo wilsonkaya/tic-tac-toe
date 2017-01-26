@@ -20,10 +20,8 @@ const decidePlayer = function(number){
   }
  if(XnO % 2 === 0){
    currentPlayer = 'x';
-   console.log(currentPlayer)
  }else if (XnO % 2 === 1 ){
    currentPlayer = 'o';
-   console.log(currentPlayer)
  }
  if(XnO === 9){
    console.log("game ends");
@@ -33,7 +31,7 @@ const decidePlayer = function(number){
 
 };
 
-
+//find winner
  const findWinner = function( ){
    if ((finalResult[0] === "x" && finalResult[1] === "x" && finalResult[2] === "x") ||
       (finalResult[3] === "x" && finalResult[4] === "x" && finalResult[5] === "x") ||
@@ -74,11 +72,13 @@ const decidePlayer = function(number){
 
  };
 
-///reset button logic
+// /reset button logic
 const resetTheBoard = function(){
-  $(".square").text("");
-  finalResult = resettingArray;
-
+$(".square").text("");
+currentPlayer = "x";
+finalResult = ['','','','','','','','',''];
+resettingGame = false;
+console.log(finalResult);
 };
 
 
