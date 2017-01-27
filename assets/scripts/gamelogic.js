@@ -9,7 +9,6 @@ let resettingGame = false;
 const decidePlayer = function(number){
   if(finalResult[number.id] !== "o" && finalResult[number.id] !== "x"){
     finalResult[number.id] = currentPlayer;
-    console.log(finalResult);
   }
 
  let XnO = 0;
@@ -64,7 +63,6 @@ const decidePlayer = function(number){
    if (resettingGame === false){
      if($(number).text() !== "x" && $(number).text() !== "o"){
        $(number).text(currentPlayer);
-       console.log(number.innerHtml);
      }
      decidePlayer(number);
      findWinner(number);
@@ -78,7 +76,6 @@ $(".square").text("");
 currentPlayer = "x";
 finalResult = ['','','','','','','','',''];
 resettingGame = false;
-console.log(finalResult);
 };
 
 
