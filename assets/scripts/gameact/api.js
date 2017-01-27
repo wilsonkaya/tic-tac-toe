@@ -14,38 +14,16 @@ return $.ajax({
 });
 };
 
-// const index = function(){
-//   return $.ajax({
-//     url: config.apiOrigin + '/games',
-//     method:'GET',
-//     headers:{
-//       Authorization: 'Token token=<token>',
-//     }
-//
-//   });
-// };
+const showUserGame = function(id){
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + id,
+    method: 'GET',
+    headers: {
+      Authorization:`Token token=${store.user.token}`
+    }
+  });
+};
 
-// const show = function(id){
-//   $.ajax({
-//     url: config.apiOrigin + '/games' + id,
-//     method: 'POST',
-//     headers:{
-//       Authorization: 'Token token=<token>',
-//     }
-//   });
-// };
-//
-// const patch = function(id){
-//   $.ajax({
-//     url: config.apiOrigin + '/games' + id,
-//     method: 'PATCH',
-//     headers:{
-//       Authorization: 'Token token=<token>',
-//     }
-//   });
-// };
-//
-//
 
 
 
@@ -59,4 +37,5 @@ return $.ajax({
 
 module.exports = {
   createNewGAme,
+  showUserGame,
 };
