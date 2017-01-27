@@ -12,22 +12,20 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 const eventsGame = require('./gamelogic');
+const authEvents = require('./auth/events.js');
 
 $(() => {
   $("#game-board").on("click", function(event) {
     event.preventDefault();
-    // let location = $(this).data("position") teh  I can use  location as attribute
-
     eventsGame.gamePlay(event.target);
 
   });
+//this is for second button
+  $("#reset").on("click",eventsGame.resetTheBoard);
 });
 
-// //
-// $(() => {
-//   $("#reset").on("click",eventsGame.resetTheBoard);
-// });
 
-
-//This will be running auth files
-// const authEvents = require('./auth/events.js');
+//This is for api
+$(() => {
+  authEvents.addHandlers();
+});
