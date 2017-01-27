@@ -1,7 +1,7 @@
 'use strict';
 
 const getFormFields = require(`../../../lib/get-form-fields`);
-
+const game = require('../gamelogic');
 const api = require('./api');
 const ui = require('./ui');
 // const store = require('../store');
@@ -31,13 +31,22 @@ const onGetGame = function(event) {
   }
 };
 
+const onUpDateGame = function(event){
+    event.preventDefault();
+    const passmove = game.sendMove();
+    console.log("passmove: " + passmove);
+    api.updateUserGame(passmove)
+    .then(ui.onSuccess)
+    .catch(ui.onError);
+};
+
 
 
 // this is for get
 const addGameHandlers = () => {
   $('#create-NewGame').on('click', onCreateNewGame);
   $('#show-game').on('submit', onGetGame);
-
+  // $("#game-board").on("click", onUpDateGame);
 };
 
 
