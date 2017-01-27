@@ -24,7 +24,17 @@ const showUserGame = function(id){
   });
 };
 
-
+const updateUserGame = function(data){
+  console.log("updateUserGame Data: ", data);
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + `${store.user.id}`,
+    method: "PATCH",
+    headers:{
+      Authorization:`Token token=${store.user.token}`
+    },
+    data
+  });
+};
 
 
 
@@ -38,4 +48,5 @@ const showUserGame = function(id){
 module.exports = {
   createNewGAme,
   showUserGame,
+  updateUserGame,
 };
