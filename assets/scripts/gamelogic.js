@@ -4,7 +4,6 @@ let currentPlayer = "x";
 let resettingArray = ['','','','','','','','',''];
 let resettingGame = false;
 
-
   //  decidePlayer
 const decidePlayer = function(number){
   if(finalResult[number.id] !== "o" && finalResult[number.id] !== "x"){
@@ -70,6 +69,30 @@ const decidePlayer = function(number){
 
  };
 
+
+// Send the move of the player
+
+let sendMove = function (number){
+  //for updating the game
+  let singleUpdate = {
+    "game": {
+      "cell": {
+        "index": 0,
+        "value": "x"
+      },
+      "over": false
+    }
+  };
+
+  singleUpdate['game']['cell']['value'] = currentPlayer;
+  singleUpdate['game']['cell']['index'] = number;
+  singleUpdate['game']['over'] = resettingGame;
+
+  return singleUpdate;
+
+}
+
+
 // /reset button logic
 const resetTheBoard = function(){
 $(".square").text("");
@@ -81,5 +104,6 @@ resettingGame = false;
 
  module.exports = {
   gamePlay,
-  resetTheBoard
+  resetTheBoard,
+  sendMove
  };
