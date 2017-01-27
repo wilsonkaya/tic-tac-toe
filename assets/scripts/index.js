@@ -13,6 +13,7 @@ $(() => {
 // use require without a reference to ensure a file is bundled
 const eventsGame = require('./gamelogic');
 const authEvents = require('./auth/events.js');
+const gameEvents = require('./gameact/events.js');
 
 $(() => {
   $("#game-board").on("click", function(event) {
@@ -28,4 +29,5 @@ $(() => {
 //This is for api
 $(() => {
   authEvents.addHandlers();
+  gameEvents.addGameHandlers();
 });
