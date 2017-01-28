@@ -12,9 +12,91 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <div class="show-winner">
 
+      <div class="ToSign">
+
+              <h1>API Token Auth</h1>
+              <form id="sign-up">
+                <fieldset>
+                  <legend>Sign up!</legend>
+                  <label >
+                    Email
+                    <input type="text" name="credentials[email]">
+                  </label>
+                  <label >
+                    Password
+                    <input type= "password" name="credentials[password]">
+                  </label>
+                  <label >
+                    Password Confirmation
+                    <input type="password" name="credentials[password_confirmation]">
+                  </label>
+                  <input type="submit" name="submit" value="Sign up!">
+                </fieldset>
+              </form>
+
+
+              <form id="sign-in">
+                <fieldset>
+                  <legend>Sign in!</legend>
+                  <label >
+                    Email
+                    <input type="text" name="credentials[email]">
+                  </label>
+                  <label >
+                    Password
+                    <input type= "password" name="credentials[password]">
+                  </label>
+                  <input type="submit" name="submit" value="Sign in!">
+                </fieldset>
+              </form>
+
+                  <form id="change-password">
+                    <fieldset>
+                      <legend>Change Password!</legend>
+                      <label >
+                        Old Password
+                          <input type= "password" name="passwords[old]">
+                      </label>
+                      <label >
+                        New Password
+                          <input type= "password" name="passwords[new]">
+                      </label>
+                          <input type="submit" name="submit" value="change-password">
+                    </fieldset>
+                  </form>
+
+                  <form id="sign-out">
+                    <fieldset>
+                      <legend>Sign Out!</legend>
+                      <input type="submit" name="submit" value="Sign Out!">
+                    </fieldset>
+                  </form>
       </div>
+
+      <div class="buttons-forGame">
+        <div class="createNewgame">
+        <button type="button" id= "create-NewGame"> Create New Game </button>
+        </div>
+
+        <form class="books"  id="show-game">
+          <div class="form-group">
+            <input type="text" name="game[id]" placeholder="ID of the game to see">
+          </div>
+
+          <button type="submit" class="btn btn-danger">Show Game </button>
+        </form>
+
+        <div class="Fingame">
+        <button type="button" id= "show-FinishedGame"> Create New Game </button>
+        </div>
+      </div>
+
+
+
+      <div class="board-appear">
+        <div class="show-winner">
+        </div>
       <div id="game-board">
         <div class="row">
           <div class="square" id="0"> </div>
@@ -31,84 +113,17 @@
           <div class="square" id="7"></div>
           <div class="square" id="8"></div>
         </div>
-</div>
-
-      <div class="createNewgame">
-      <button type="button" id= "create-NewGame"> Create New Game </button>
-      </div>
-
-      <form class="books"  id="show-game">
-        <div class="form-group">
-          <input type="text" name="game[id]" placeholder="ID of the game to see">
-        </div>
-
-        <button type="submit" class="btn btn-danger">Show Game </button>
-      </form>
-
-      <div class="Fingame">
-      <button type="button" id= "show-FinishedGame"> Create New Game </button>
+  </div>
       </div>
 
 
 
 
-      <h1>API Token Auth</h1>
-      <form id="sign-up">
-        <fieldset>
-          <legend>Sign up!</legend>
-          <label >
-            Email
-            <input type="text" name="credentials[email]">
-          </label>
-          <label >
-            Password
-            <input type= "password" name="credentials[password]">
-          </label>
-          <label >
-            Password Confirmation
-            <input type="password" name="credentials[password_confirmation]">
-          </label>
-          <input type="submit" name="submit" value="Sign up!">
-        </fieldset>
-      </form>
 
 
-      <form id="sign-in">
-        <fieldset>
-          <legend>Sign up!</legend>
-          <label >
-            Email
-            <input type="text" name="credentials[email]">
-          </label>
-          <label >
-            Password
-            <input type= "password" name="credentials[password]">
-          </label>
-          <input type="submit" name="submit" value="Sign in!">
-        </fieldset>
-      </form>
 
-          <form id="change-password">
-            <fieldset>
-              <legend>Change Password!</legend>
-              <label >
-                Old Password
-                  <input type= "password" name="passwords[old]">
-              </label>
-              <label >
-                New Password
-                  <input type= "password" name="passwords[new]">
-              </label>
-                  <input type="submit" name="submit" value="change-password">
-            </fieldset>
-          </form>
 
-          <form id="sign-out">
-            <fieldset>
-              <legend>Sign Out!</legend>
-              <input type="submit" name="submit" value="Sign Out!">
-            </fieldset>
-          </form>
+
 
 
 
