@@ -63,34 +63,33 @@ const decidePlayer = function(number){
      if($(number).text() !== "x" && $(number).text() !== "o"){
        $(number).text(currentPlayer);
      }
-     decidePlayer(number);
-     findWinner(number);
+    findWinner(number);
+    sendMove(number)
+    decidePlayer(number);
+
+
    }
 
  };
 
 
-// Send the move of the player
+let singleUpdate = {
+   "game": {
+     "cell": {
+       "index": 0,
+       "value": "x"
+     },
+     "over": false
+   }
+ };
 
 let sendMove = function (number){
-  //for updating the game
-  let singleUpdate = {
-    "game": {
-      "cell": {
-        "index": 0,
-        "value": "x"
-      },
-      "over": false
-    }
-  };
-
   singleUpdate['game']['cell']['value'] = currentPlayer;
-  singleUpdate['game']['cell']['index'] = number;
+  singleUpdate['game']['cell']['index'] = parseInt(number.id);
   singleUpdate['game']['over'] = resettingGame;
+// console.log(singleUpdate)
 
-  return singleUpdate;
-
-}
+};
 
 
 // /reset button logic
@@ -105,5 +104,6 @@ resettingGame = false;
  module.exports = {
   gamePlay,
   resetTheBoard,
-  sendMove
+  singleUpdate,
+
  };
