@@ -19,10 +19,7 @@ $(() => {
   $("#game-board").on("click", function(event) {
     event.preventDefault();
     eventsGame.gamePlay(event.target);
-    eventsGame.sendMove(event.target.id);
   });
-//this is for second button
-  $("#reset").on("click",eventsGame.resetTheBoard);
 });
 
 
