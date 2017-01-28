@@ -60,7 +60,7 @@ const addGameHandlers = () => {
   $('#create-NewGame').on('click', onCreateNewGame);
   $('#show-game').on('submit', onGetGame);
   $("#game-board").on("click", onUpDateGame);
-  // $("#f")
+
 };
 
 
