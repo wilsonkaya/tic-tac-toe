@@ -57,22 +57,6 @@ const decidePlayer = function(number){
 
 };
 
- //function to player // number is the div att of html
- const gamePlay = function(number){
-   if (resettingGame === false){
-     if($(number).text() !== "x" && $(number).text() !== "o"){
-       $(number).text(currentPlayer);
-     }
-    findWinner(number);
-    sendMove(number)
-    decidePlayer(number);
-
-
-   }
-
- };
-
-
 let singleUpdate = {
    "game": {
      "cell": {
@@ -83,6 +67,8 @@ let singleUpdate = {
    }
  };
 
+
+
 let sendMove = function (number){
   singleUpdate['game']['cell']['value'] = currentPlayer;
   singleUpdate['game']['cell']['index'] = parseInt(number.id);
@@ -90,6 +76,24 @@ let sendMove = function (number){
 // console.log(singleUpdate)
 
 };
+
+ //function to player // number is the div att of html
+ const gamePlay = function(number){
+   if (resettingGame === false){
+     if($(number).text() !== "x" && $(number).text() !== "o"){
+       $(number).text(currentPlayer);
+     }
+
+    sendMove(number);
+    decidePlayer(number);
+    findWinner(number);
+
+   }
+
+ };
+
+
+
 
 
 // /reset button logic
