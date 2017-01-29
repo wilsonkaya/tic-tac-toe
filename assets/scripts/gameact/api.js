@@ -3,15 +3,15 @@
 const config = require("../config");
 const store = require("../store");
 
-// const index = function(){
-//   return $.ajax({
-//     url: config.apiOrigin + '/games',
-//     method: 'GET',
-//     headers: {
-//       Authorization:`Token token=${store.user.token}`
-//     }
-//   });
-// };
+const index = function(){
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'GET',
+    headers: {
+      Authorization:`Token token=${store.user.token}`
+    }
+  });
+};
 
 
 const createNewGAme = function(){
@@ -60,5 +60,5 @@ module.exports = {
   createNewGAme,
   showUserGame,
   updateUserGame,
-  // index
+  index
 };
