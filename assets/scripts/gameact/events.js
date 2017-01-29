@@ -44,6 +44,10 @@ const onGetGame = function(event) {
     .catch(ui.onError);
   } else {
     api.showUserGame(form.game.id)
+    .then((response) => {
+      save.game = response.game;
+      $("#game-results").text("Game " + response.game.cells);
+    })
     .then(ui.onSuccess)
     .catch(ui.onError);
   }
@@ -52,7 +56,6 @@ const onGetGame = function(event) {
 const onUpDateGame = function(event){
     event.preventDefault();
     const passmove = game.singleUpdate;
-    // console.log(passmove);
     api.updateUserGame(passmove)
     .then(ui.onSuccess)
     .catch(ui.onError);
