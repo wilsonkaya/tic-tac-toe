@@ -4,15 +4,19 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const game = require('../gamelogic');
 const api = require('./api');
 const ui = require('./ui');
-const save = require("../store.js")
-// // const store = require('../store');
-// const onGetFinished = function(event){
-//   event.preventDefault();
-//   api.index();
-//   .then(ui.success)
-//   .catch(ui.failure);
-//
-// };
+const save = require("../store.js");
+
+
+
+ const onGetFinished = function(event){
+  event.preventDefault();
+  api.index()
+  .then((response) => {
+    save.game = response.game;
+  })
+  .then(ui.success)
+  .catch(ui.failure);
+};
 
 
 const onCreateNewGame = function (event) {
@@ -60,6 +64,7 @@ const addGameHandlers = () => {
   $('#create-NewGame').on('click', onCreateNewGame);
   $('#show-game').on('submit', onGetGame);
   $("#game-board").on("click", onUpDateGame);
+  $("#show-FinishedGame").on("click", onGetFinished);
 
 };
 
