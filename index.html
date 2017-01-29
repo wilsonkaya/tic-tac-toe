@@ -13,108 +13,177 @@
     </head>
     <body class="container-fluid">
 
-      <div class="ToSign">
-
-              <h1>API Token Auth</h1>
-              <form id="sign-up">
-                <fieldset>
-                  <legend>Sign up!</legend>
-                  <label >
-                    Email
-                    <input type="text" name="credentials[email]">
-                  </label>
-                  <label >
-                    Password
-                    <input type= "password" name="credentials[password]">
-                  </label>
-                  <label >
-                    Password Confirmation
-                    <input type="password" name="credentials[password_confirmation]">
-                  </label>
-                  <input type="submit" name="submit" value="Sign up!">
-                </fieldset>
-              </form>
 
 
-              <form id="sign-in">
-                <fieldset>
-                  <legend>Sign in!</legend>
-                  <label >
-                    Email
-                    <input type="text" name="credentials[email]">
-                  </label>
-                  <label >
-                    Password
-                    <input type= "password" name="credentials[password]">
-                  </label>
-                  <input type="submit" name="submit" value="Sign in!">
-                </fieldset>
-              </form>
+<div class="container">
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Sign Up
+    </button>
 
-                  <form id="change-password">
-                    <fieldset>
-                      <legend>Change Password!</legend>
-                      <label >
-                        Old Password
-                          <input type= "password" name="passwords[old]">
-                      </label>
-                      <label >
-                        New Password
-                          <input type= "password" name="passwords[new]">
-                      </label>
-                          <input type="submit" name="submit" value="change-password">
-                    </fieldset>
-                  </form>
-
-                  <form id="sign-out">
-                    <fieldset>
-                      <legend>Sign Out!</legend>
-                      <input type="submit" name="submit" value="Sign Out!">
-                    </fieldset>
-                  </form>
-      </div>
-
-      <div class="buttons-forGame">
-        <div class="createNewgame">
-        <button type="button" id= "create-NewGame"> Create New Game </button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          <h1>API Token Auth</h1>
+          <form id="sign-up">
+            <fieldset>
+              <legend>Sign up!</legend>
+              <label >
+                Email
+                <input type="text" name="credentials[email]">
+              </label>
+              <label >
+                Password
+                <input type= "password" name="credentials[password]">
+              </label>
+              <label >
+                Password Confirmation
+                <input type="password" name="credentials[password_confirmation]">
+              </label>
+              <input type="submit" name="submit" value="Sign up!">
+            </fieldset>
+          </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <form class="books"  id="show-game">
-          <div class="form-group">
-            <input type="text" name="game[id]" placeholder="ID of the game to see">
+        <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
+    Sign In
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-in">
+            <fieldset>
+              <legend>Sign in!</legend>
+              <label >
+                Email
+                <input type="text" name="credentials[email]">
+              </label>
+              <label >
+                Password
+                <input type= "password" name="credentials[password]">
+              </label>
+              <input type="submit" name="submit" value="Sign in!">
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
+  Changed Password
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <form id="change-password">
+          <fieldset>
+            <legend>Change Password!</legend>
+            <label >
+              Old Password
+              <input type= "password" name="passwords[old]">
+            </label>
+            <label >
+              New Password
+              <input type= "password" name="passwords[new]">
+            </label>
+            <input type="submit" name="submit" value="change-password">
+          </fieldset>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hideChangePassword">
+<form id="sign-out">
+    <fieldset>
+      <input type="submit" class="btn btn-primary btn-lg" name="submit" value="Sign Out!">
+    </fieldset>
+  </form>
+</div>
+
+
+<div class="buttons-forGame">
+          <div class="createNewgame">
+          <button type="button" id= "create-NewGame"> Create New Game </button>
           </div>
 
-          <button type="submit" class="btn btn-danger">Show Game </button>
-        </form>
+          <form class="books"  id="show-game">
+            <div class="form-group">
+              <input type="text" name="game[id]" placeholder="ID of the game to see">
+            </div>
 
-        <div class="Fingame">
-        <button type="button" id= "show-FinishedGame"> Create New Game </button>
-        </div>
-      </div>
+            <button type="submit" class="btn btn-danger">Show Game </button>
+          </form>
 
 
+        <div class="board-appear">
 
-      <div class="board-appear">
-        <div class="show-winner">
+        <div id="game-board">
+          <div class="row">
+            <div class="square" id="0"></div>
+            <div class="square" id="1"></div>
+            <div class="square" id="2"></div>
+          </div>
+          <div class="row">
+            <div class="square" id="3"></div>
+            <div class="square" id="4"></div>
+            <div class="square" id="5"></div>
+          </div>
+          <div class="row">
+            <div class="square" id="6"> </div>
+            <div class="square" id="7"></div>
+            <div class="square" id="8"></div>
+          </div>
+          <div id="show-winner">
+          </div>
+    </div>
         </div>
-      <div id="game-board">
-        <div class="row">
-          <div class="square" id="0"> </div>
-          <div class="square" id="1"></div>
-          <div class="square" id="2"></div>
-        </div>
-        <div class="row">
-          <div class="square" id="3"> </div>
-          <div class="square" id="4"></div>
-          <div class="square" id="5"></div>
-        </div>
-        <div class="row">
-          <div class="square" id="6"> </div>
-          <div class="square" id="7"></div>
-          <div class="square" id="8"></div>
-        </div>
-  </div>
-      </div>
+</div>
+
+<div id="game-results">
+
+</div>
+
+<div class="Fingame">
+<button type="button" id= "show-FinishedGame"> Show Players Game </button>
+</div>
+</div>
+
 
 
 
