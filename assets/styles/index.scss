@@ -14,14 +14,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 
 
-// .game-board {
-//   height: 318px;
-//   width: 328px;
-//   z-index: 1;
-//   border: 1px solid black;
-//   display: hidden;
-//
-// }
+#game-board {
+  // height: 318px;
+  // width: 328px;
+  // z-index: 1;
+  // border: 1px solid black;
+  display: none;
+
+}
+.visible-signin{
+  display: none;
+}
 
 .square {
   width: 100px;
@@ -42,10 +45,22 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   height:50px;
   border: 1px solid black;
 }
+#warning1{
+  width:100px;
+  height:25px;
+  border: 1px solid black;
+}
+#warning2{
+  width:100px;
+  height:25px;
+  border: 1px solid black;
+}
 
-//
-// //====Butttons For Game ====
-// .
+
+//====Butttons For Game ====
+// .visible-signin{
+//   display: none;
+// }
 
 
 // //====Board ===
