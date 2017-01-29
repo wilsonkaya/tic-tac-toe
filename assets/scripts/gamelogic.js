@@ -3,6 +3,7 @@ let finalResult = ['','','','','','','','',''];
 let currentPlayer = "x";
 let resettingArray = ['','','','','','','','',''];
 let resettingGame = false;
+let displayWinner = '';
 
   //  decidePlayer
 const decidePlayer = function(number){
@@ -21,13 +22,14 @@ const decidePlayer = function(number){
  }else if (XnO % 2 === 1 ){
    currentPlayer = 'o';
  }
- if(XnO === 9){
-   console.log("game ends");
+ findWinner(number);
+ sendMove(number);
+ if(resettingGame === false && XnO === 9){
+    $('#show-winner').text("Draw");
    finalResult = resettingArray;
    currentPlayer = 'x';
  }
-findWinner(number);
-sendMove(number);
+
 };
 
 //find winner
@@ -42,8 +44,9 @@ sendMove(number);
       (finalResult[2] === "x" && finalResult[4] === "x" && finalResult[6] === "x")) {
         finalResult = resettingArray;
         resettingGame = true;
+      $('#show-winner').text("X wins");
 
-        console.log("x wins");
+
       } else if ((finalResult[0] === "o" && finalResult[1] === "o" && finalResult[2] === "o") ||
          (finalResult[3] === "o" && finalResult[4] === "o" && finalResult[5] === "o") ||
          (finalResult[6] === "o" && finalResult[7] === "o" && finalResult[8] === "o") ||
@@ -54,7 +57,7 @@ sendMove(number);
          (finalResult[2] === "o" && finalResult[4] === "o" && finalResult[6] === "o")){
          finalResult = resettingArray;
          resettingGame = true;
-         console.log("o wins");
+            $('#show-winner').text("O wins");
        }
 
 
@@ -75,9 +78,9 @@ let singleUpdate = {
 
 let sendMove = function (number){
   if(currentPlayer === "x"){
-    singleUpdate['game']['cell']['value'] = "o"
+    singleUpdate['game']['cell']['value'] = "o";
   } else{
-    singleUpdate['game']['cell']['value'] = "x"
+    singleUpdate['game']['cell']['value'] = "x";
   }
   singleUpdate['game']['cell']['index'] = parseInt(number.id);
   singleUpdate['game']['over'] = resettingGame;
@@ -112,6 +115,7 @@ $(".square").text("");
 currentPlayer = "x";
 finalResult = ['','','','','','','','',''];
 resettingGame = false;
+  $('#show-winner').text("");
 };
 
 
