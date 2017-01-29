@@ -62,7 +62,7 @@ const decidePlayer = function(number){
 
 
 };
-
+//data for api
 let singleUpdate = {
    "game": {
      "cell": {
