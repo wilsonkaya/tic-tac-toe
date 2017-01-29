@@ -13,6 +13,7 @@ const save = require("../store.js");
   api.index()
   .then((response) => {
     save.game = response.game;
+    $("#game-results").text("Games " + response.games.length);
   })
   .then(ui.success)
   .catch(ui.failure);
@@ -25,7 +26,7 @@ const onCreateNewGame = function (event) {
   api.createNewGAme()
   .then((response) => {
     save.game = response.game;
-    console.log(response);
+    $("#game-board").show();
   })
   .then(game.resetTheBoard())
   .then(ui.success)
@@ -67,7 +68,6 @@ const addGameHandlers = () => {
   $("#show-FinishedGame").on("click", onGetFinished);
 
 };
-
 
 module.exports = {
   addGameHandlers,
