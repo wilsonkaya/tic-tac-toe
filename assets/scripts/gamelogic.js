@@ -114,7 +114,8 @@ $(".square").text("");
 currentPlayer = "x";
 finalResult = ['','','','','','','','',''];
 resettingGame = false;
-  $('#show-winner').text("");
+$('#show-winner').text("");
+$('#game-results').text("");
 };
 
 
