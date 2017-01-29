@@ -17,7 +17,7 @@ const onSignUp = function (event) {
     }
   })
   .then(ui.success)
-  .catch($("#warning1").text("Account already exist !"))
+  .catch($("#warning1").text("Mistake !"))
   .catch(ui.failure);
 };
 
@@ -37,7 +37,7 @@ const onSignIn = function (event) {
       return store.user;
     })
     .then(ui.success)
-    .catch($("#warning2").text("Account already exist !"))
+    .catch($("#warning2").text("Mistake !"))
     .catch(ui.failure);
 };
 
