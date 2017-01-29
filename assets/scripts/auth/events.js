@@ -8,12 +8,17 @@ const store = require('../store');
 
 const onSignUp = function (event) {
   event.preventDefault();
-
   let data = getFormFields(event.target);
-
   api.signUp(data)
-    .then(ui.success)
-    .catch(ui.failure);
+  .then((response)=>{
+    $("#warning1").text("");
+    if(response !== ""){
+      $('#myModal').modal('hide');
+    }
+  })
+  .then(ui.success)
+  .catch($("#warning1").text("Account already exist !"))
+  .catch(ui.failure);
 };
 
 
@@ -21,13 +26,18 @@ const onSignIn = function (event) {
   event.preventDefault();
 
   let data = getFormFields(event.target);
-
   api.signIn(data)
     .then((response)=>{
+      $("#warning2").text("");
       store.user = response.user;
+      if(response !== ""){
+        $('#myModal2').modal('hide');
+        $(".visible-signin").show();
+      }
       return store.user;
     })
     .then(ui.success)
+    .catch($("#warning2").text("Account already exist !"))
     .catch(ui.failure);
 };
 
