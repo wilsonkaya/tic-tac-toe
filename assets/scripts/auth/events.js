@@ -60,6 +60,10 @@ const onSignOut = function (event) {
       delete store.user;
       return store;
     })
+    .then(() =>{
+      $(".visible-signin").hide();
+      $(".buttons-forGame").hide();
+    })
     .then(ui.success)
     .catch(ui.failure)
     ;
@@ -70,7 +74,6 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
-
 };
 
 

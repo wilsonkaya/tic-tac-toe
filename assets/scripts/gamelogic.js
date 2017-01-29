@@ -83,8 +83,6 @@ let sendMove = function (number){
   }
   singleUpdate['game']['cell']['index'] = parseInt(number.id);
   singleUpdate['game']['over'] = resettingGame;
-// console.log(singleUpdate)
-
 };
 
  //function to player // number is the div att of html
@@ -116,6 +114,7 @@ finalResult = ['','','','','','','','',''];
 resettingGame = false;
 $('#show-winner').text("");
 $('#game-results').text("");
+$(".buttons-forGame").show();
 };
 
 

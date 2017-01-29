@@ -36,7 +36,6 @@ const showUserGame = function(id){
 };
 
 const updateUserGame = function(data){
-  console.log("updateUserGame Data: ", data);
   return $.ajax({
     url: config.apiOrigin + '/games/' + `${store.game.id}`,
     method: "PATCH",
