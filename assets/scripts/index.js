@@ -16,7 +16,7 @@ const authEvents = require('./auth/events.js');
 const gameEvents = require('./gameact/events.js');
 
 $(() => {
-  $("#game-board").on("click", function(event) {
+  $(".square").on("click", function(event) {
     event.preventDefault();
     eventsGame.gamePlay(event.target);
   });
