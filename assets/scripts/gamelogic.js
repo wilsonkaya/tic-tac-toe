@@ -3,7 +3,6 @@ let finalResult = ['','','','','','','','',''];
 let currentPlayer = "x";
 let resettingArray = ['','','','','','','','',''];
 let resettingGame = false;
-let displayWinner = '';
 
   //  decidePlayer
 const decidePlayer = function(number){
