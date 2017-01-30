@@ -37,9 +37,7 @@ const onCreateNewGame = function (event) {
 const onGetGame = function(event) {
   event.preventDefault();
   let form = getFormFields(event.target);
-
   if (form.game.id.length === 0) {
-    //important need to define index
     api.index()
     .then(ui.onSuccess)
     .catch(ui.onError);
@@ -68,7 +66,7 @@ const onUpDateGame = function(event){
 const addGameHandlers = () => {
   $('#create-NewGame').on('click', onCreateNewGame);
   $('#show-game').on('submit', onGetGame);
-  $("#game-board").on("click", onUpDateGame);
+  $(".square").on("click", onUpDateGame);
   $("#show-FinishedGame").on("click", onGetFinished);
 
 };
