@@ -17,7 +17,9 @@ const onSignUp = function (event) {
     }
   })
   .then(ui.success)
-  .catch($("#warning1").text("Mistake !"))
+  .catch((error)=>{
+    $("#warning1").text("Mistake !")
+  })
   .catch(ui.failure);
 };
 
@@ -37,15 +39,15 @@ const onSignIn = function (event) {
       return store.user;
     })
     .then(ui.success)
-    .catch($("#warning2").text("Mistake !"))
+    .catch((error)=>{
+      $("#warning2").text("Mistake !")
+    })
     .catch(ui.failure);
 };
 
 const onChangePassword = function (event) {
   event.preventDefault();
-
   let data = getFormFields(event.target);
-
   api.changePassword(data)
     .then(ui.success)
     .catch(ui.failure)
