@@ -56,11 +56,8 @@ const decidePlayer = function(number){
          (finalResult[2] === "o" && finalResult[4] === "o" && finalResult[6] === "o")){
          finalResult = resettingArray;
          resettingGame = true;
-            $('#show-winner').text("O wins");
+         $('#show-winner').text("O wins");
        }
-
-
-
 };
 //data for api
 let singleUpdate = {
@@ -74,7 +71,6 @@ let singleUpdate = {
  };
 
 
-
 let sendMove = function (number){
   if(currentPlayer === "x"){
     singleUpdate['game']['cell']['value'] = "o";
@@ -86,25 +82,15 @@ let sendMove = function (number){
 };
 
  //function to player // number is the div att of html
-
  const gamePlay = function(number){
    if (resettingGame === false){
      if($(number).text() !== "x" && $(number).text() !== "o"){
        $(number).text(currentPlayer);
      }
-
     // sendMove(number);
     decidePlayer(number);
-
-
-
    }
-
  };
-
-
-
-
 
 // /reset button logic
 const resetTheBoard = function(){
