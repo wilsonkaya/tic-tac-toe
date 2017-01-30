@@ -6,6 +6,7 @@ const api = require('./api');
 const ui = require('./ui');
 const store = require('../store');
 
+//Events
 const onSignUp = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
@@ -56,7 +57,6 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault();
-
   api.signOut()
     .then(() => {
       delete store.user;
@@ -67,8 +67,7 @@ const onSignOut = function (event) {
       $(".buttons-forGame").hide();
     })
     .then(ui.success)
-    .catch(ui.failure)
-    ;
+    .catch(ui.failure);
 };
 
 const addHandlers = () => {
