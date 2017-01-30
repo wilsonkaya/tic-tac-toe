@@ -12,7 +12,6 @@ const save = require("../store.js");
   event.preventDefault();
   api.index()
   .then((response) => {
-    save.game = response.game;
     $("#game-results").text("Games " + response.games.length);
   })
   .then(ui.success)
