@@ -64,12 +64,25 @@ body {
   font-size: 20px;
 }
 #warning1{
-  width:100px;
+  width:110px;
   height:25px;
-  border: 1px solid black;
+  border: 1px solid white;
+  margin-left: 40%;
+  font-size: 20px;
 }
 #warning2{
-  width:100px;
+  width:110px;
   height:25px;
-  border: 1px solid black;
+  border: 1px solid white;
+  margin-left: 40%;
+  font-size: 20px;
+}
+
+// Warning for change Password
+#warning3{
+  width:110px;
+  height:25px;
+  border: 1px solid white;
+  margin-left: 40%;
+  font-size: 20px;
 }
