@@ -54,9 +54,14 @@ const onChangePassword = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.changePassword(data)
+    .then((response)=>{
+      $("#warning3").text("Succesfull !")
+    })
     .then(ui.success)
-    .catch(ui.failure)
-    ;
+    .catch((error)=>{
+      $("#warning3").text("Mistake !")
+    })
+    .catch(ui.failure);
 };
 
 const onSignOut = function (event) {
@@ -75,11 +80,21 @@ const onSignOut = function (event) {
     .catch(ui.failure);
 };
 
+const closeChagngePasword = function (){
+  $("#warning1").text("");
+  $("#warning2").text("");
+  $("#warning3").text("");
+  $(".clean-changepassword").val("");
+  $(".clean-signup").val("");
+  $(".clean-signin").val("");
+};
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
+  $('.close-button').on('click', closeChagngePasword);
 };
 
 
