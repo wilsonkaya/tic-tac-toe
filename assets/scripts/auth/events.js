@@ -38,7 +38,7 @@ const onSignIn = function (event) {
         $('#myModal2').modal('hide');
         $(".visible-signin").show();
         $('.clean-signin').val("");
-        $('.to-hide').hide();
+        $('.signin-hide').hide();
 
       }
       return store.user;
@@ -69,6 +69,7 @@ const onSignOut = function (event) {
     .then(() =>{
       $(".visible-signin").hide();
       $(".buttons-forGame").hide();
+      $('.signin-hide').show();
     })
     .then(ui.success)
     .catch(ui.failure);
