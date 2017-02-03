@@ -15,6 +15,7 @@ const onSignUp = function (event) {
     $("#warning1").text("");
     if(response !== ""){
       $('#myModal').modal('hide');
+      $('.clean-signup').val("");
     }
   })
   .then(ui.success)
@@ -36,6 +37,9 @@ const onSignIn = function (event) {
       if(response !== ""){
         $('#myModal2').modal('hide');
         $(".visible-signin").show();
+        $('.clean-signin').val("");
+        $('.to-hide').hide();
+
       }
       return store.user;
     })
