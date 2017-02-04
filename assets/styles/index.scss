@@ -3,17 +3,22 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 //
 
 body {
-  margin-top: 30px;
   background-color:#BDD0CE;
   font-family:"Roboto", Arial, sans-serif;
   margin: auto;
-  text-align:center;
   margin-top:50px;
 
 }
-
+// Buttons to be hidden beafter getting signed in
 #signin-hide{
   display: flow;
+}
+
+//buttons to become visible after getting signed in
+.visible-signin{
+  display: none;
+  float: left;
+  padding: 5px
 }
 
 #game-board {
@@ -25,10 +30,8 @@ body {
   display: none;
 }
 
-.visible-signin{
-  display: none;
-}
 
+//Button to show the game info
 #show-game{
   display: none;
   float:left;
@@ -49,20 +52,23 @@ body {
   font-size: 90px;
 
 }
-
+//div to show the game result and previous games
 #show-winner{
   width:250px;
   height:50px;
   border: 1px solid black;
   font-size: 20px;
+  display: none;
 }
+// don't need this anymore
+// #game-results{
+//   width:250px;
+//   height:50px;
+//   border: 1px solid black;
+//   font-size: 20px;
+// }
 
-#game-results{
-  width:250px;
-  height:50px;
-  border: 1px solid black;
-  font-size: 20px;
-}
+//Sign up warning
 #warning1{
   width:110px;
   height:25px;
@@ -70,6 +76,8 @@ body {
   margin-left: 40%;
   font-size: 20px;
 }
+
+//Sing in warning
 #warning2{
   width:110px;
   height:25px;
@@ -85,4 +93,7 @@ body {
   border: 1px solid white;
   margin-left: 40%;
   font-size: 20px;
+}
+#show-FinishedGame{
+  display: none;
 }
