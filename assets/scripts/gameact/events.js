@@ -12,7 +12,7 @@ const save = require("../store.js");
   event.preventDefault();
   api.index()
   .then((response) => {
-    $("#game-results").text("Games " + response.games.length);
+    $("#show-winner").text("Games " + response.games.length);
   })
   .then(ui.success)
   .catch(ui.failure);
@@ -44,7 +44,7 @@ const onGetGame = function(event) {
     api.showUserGame(form.game.id)
     .then((response) => {
       save.game = response.game;
-      $("#game-results").text("Game " + response.game.cells);
+      $("#show-winner").text("Game " + response.game.cells);
     })
     .then(ui.onSuccess)
     .catch(ui.onError);

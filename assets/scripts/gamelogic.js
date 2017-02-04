@@ -99,7 +99,7 @@ currentPlayer = "x";
 finalResult = ['','','','','','','','',''];
 resettingGame = false;
 $('#show-winner').text("");
-$('#game-results').text("");
+$('#clean-showgame').val("");
 $(".buttons-forGame").show();
 };
 
