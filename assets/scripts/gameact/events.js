@@ -27,6 +27,8 @@ const onCreateNewGame = function (event) {
     save.game = response.game;
     $("#game-board").show();
     $("#show-game").show();
+    $("#show-winner").show();
+    $("#show-FinishedGame").show();
   })
   .then(game.resetTheBoard())
   .then(ui.success)
