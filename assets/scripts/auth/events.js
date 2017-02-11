@@ -7,34 +7,34 @@ const ui = require('./ui');
 const store = require('../store');
 
 //Events
-const onSignUp = function (event) {
+const onSignUp = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.signUp(data)
-  .then((response)=>{
-    $("#warning1").text("");
-    if(response !== ""){
-      $('#myModal').modal('hide');
-      $('.clean-signup').val("");
-    }
-  })
-  .then(ui.success)
-  .catch((error)=>{
-    $("#warning1").text("Mistake !")
-  })
-  .catch(ui.failure);
+    .then((response) => {
+      $("#warning1").text("");
+      if (response !== "") {
+        $('#myModal').modal('hide');
+        $('.clean-signup').val("");
+      }
+    })
+    .then(ui.success)
+    .catch((error) => {
+      $("#warning1").text("Mistake !")
+    })
+    .catch(ui.failure);
 };
 
 
-const onSignIn = function (event) {
+const onSignIn = function(event) {
   event.preventDefault();
 
   let data = getFormFields(event.target);
   api.signIn(data)
-    .then((response)=>{
+    .then((response) => {
       $("#warning2").text("");
       store.user = response.user;
-      if(response !== ""){
+      if (response !== "") {
         $('#myModal2').modal('hide');
         $(".visible-signin").show();
         $('.clean-signin').val("");
@@ -44,34 +44,34 @@ const onSignIn = function (event) {
       return store.user;
     })
     .then(ui.success)
-    .catch((error)=>{
+    .catch((error) => {
       $("#warning2").text("Mistake !")
     })
     .catch(ui.failure);
 };
 
-const onChangePassword = function (event) {
+const onChangePassword = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.changePassword(data)
-    .then((response)=>{
+    .then((response) => {
       $("#warning3").text("Succesfull !")
     })
     .then(ui.success)
-    .catch((error)=>{
+    .catch((error) => {
       $("#warning3").text("Mistake !")
     })
     .catch(ui.failure);
 };
 
-const onSignOut = function (event) {
+const onSignOut = function(event) {
   event.preventDefault();
   api.signOut()
     .then(() => {
       delete store.user;
       return store;
     })
-    .then(() =>{
+    .then(() => {
       $(".visible-signin").hide();
       $(".buttons-forGame").hide();
       $('.signin-hide').show();
@@ -80,7 +80,7 @@ const onSignOut = function (event) {
     .catch(ui.failure);
 };
 
-const closeChagngePasword = function (){
+const closeChagngePasword = function() {
   $("#warning1").text("");
   $("#warning2").text("");
   $("#warning3").text("");
