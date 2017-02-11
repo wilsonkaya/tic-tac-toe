@@ -14,8 +14,12 @@ const onSignUp = function(event) {
     .then((response) => {
       $("#warning1").text("");
       if (response !== "") {
-        $('#myModal').modal('hide');
-        $('.clean-signup').val("");
+        $("#warning1").text("Succesfull !");
+        setTimeout(function() {$('#myModal').modal('hide');}, 1300)
+        // $('#myModal').modal('hide');
+        setTimeout(function() {$('.clean-signup').val("");}, 1300)
+        // $('.clean-signup').val("");
+        setTimeout(function() {$('#warning1').text("");}, 1300)
       }
     })
     .then(ui.success)
