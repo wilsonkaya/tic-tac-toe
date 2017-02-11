@@ -75,6 +75,7 @@ const onSignOut = function(event) {
       $(".visible-signin").hide();
       $(".buttons-forGame").hide();
       $('.signin-hide').show();
+      $("#show-FinishedGame").hide();
     })
     .then(ui.success)
     .catch(ui.failure);
