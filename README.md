@@ -1,6 +1,7 @@
 <== LINK ==>
 Link of the game is https://wilsonkaya.github.io/tic-tac-toe/
 
+Link for github https://github.com/wilsonkaya/tic-tac-toe
 <== Technologies == >
 
 HTML, CSS, Bootstrap, jQuery
