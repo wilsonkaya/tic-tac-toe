@@ -55,7 +55,7 @@ const onChangePassword = function(event) {
   let data = getFormFields(event.target);
   api.changePassword(data)
     .then((response) => {
-      $("#warning3").text("Succesfull !")
+      $("#warning3").text("Succesfull! Please close this box!")
     })
     .then(ui.success)
     .catch((error) => {
