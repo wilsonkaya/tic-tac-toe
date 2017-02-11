@@ -1,24 +1,23 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap';
-//
+@import '~bootstrap-sass/assets/stylesheets/bootstrap'; //
 
 body {
-  background-color:#BDD0CE;
-  font-family:"Roboto", Arial, sans-serif;
-  margin: auto;
-  margin-top:50px;
-
+  background-color: #BDD0CE;
+  font-family: "Roboto", Arial, sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 50px;
 }
 // Buttons to be hidden beafter getting signed in
-#signin-hide{
+
+#signin-hide {
   display: flow;
 }
-
 //buttons to become visible after getting signed in
-.visible-signin{
+.visible-signin {
   display: none;
-  float: left;
-  padding: 5px
+  // float: left;
+  padding: 5px;
 }
 
 #game-board {
@@ -29,16 +28,14 @@ body {
   border: 1px solid #BDD0CE;
   display: none;
 }
-
-
 //Button to show the game info
-#show-game{
+#show-game {
   display: none;
-  float:left;
+  // float:left;
 }
 
 .square {
-  background-color:#DDD;
+  background-color: #DDD;
   width: 100px;
   height: 100px;
   float: left;
@@ -50,15 +47,16 @@ body {
   box-shadow: -1px -1px #777 inset;
   cursor: pointer;
   font-size: 90px;
-
 }
 //div to show the game result and previous games
-#show-winner{
-  width:250px;
-  height:50px;
+
+#show-winner {
+  width: 250px;
+  height: 50px;
   border: 1px solid black;
   font-size: 20px;
   display: none;
+  margin: auto;
 }
 // don't need this anymore
 // #game-results{
@@ -67,33 +65,40 @@ body {
 //   border: 1px solid black;
 //   font-size: 20px;
 // }
-
 //Sign up warning
-#warning1{
-  width:110px;
-  height:25px;
+#warning1 {
+  width: 110px;
+  height: 25px;
   border: 1px solid white;
   margin-left: 40%;
   font-size: 20px;
 }
-
 //Sing in warning
-#warning2{
-  width:110px;
-  height:25px;
+#warning2 {
+  width: 110px;
+  height: 25px;
+  border: 1px solid white;
+  margin-left: 40%;
+  font-size: 20px;
+}
+// Warning for change Password
+#warning3 {
+  width: 110px;
+  height: 25px;
   border: 1px solid white;
   margin-left: 40%;
   font-size: 20px;
 }
 
-// Warning for change Password
-#warning3{
-  width:110px;
-  height:25px;
-  border: 1px solid white;
-  margin-left: 40%;
-  font-size: 20px;
-}
-#show-FinishedGame{
+#show-FinishedGame {
   display: none;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-alignment {
+  text-align: center;
 }
