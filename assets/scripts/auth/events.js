@@ -81,6 +81,8 @@ const onSignOut = function(event) {
       $('.signin-hide').show();
       $("#show-FinishedGame").hide();
       $(".clean-changepassword").val("");
+      $("#warning3").text("");
+
     })
     .then(ui.success)
     .catch(ui.failure);
