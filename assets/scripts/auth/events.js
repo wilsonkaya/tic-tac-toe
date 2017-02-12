@@ -24,7 +24,7 @@ const onSignUp = function(event) {
     })
     .then(ui.success)
     .catch((error) => {
-      $("#warning1").text("Mistake !")
+      $("#warning1").text("Existing username or wrong password !")
     })
     .catch(ui.failure);
 };
@@ -49,7 +49,7 @@ const onSignIn = function(event) {
     })
     .then(ui.success)
     .catch((error) => {
-      $("#warning2").text("Mistake !")
+      $("#warning2").text("Unexisting username or wrong password !")
     })
     .catch(ui.failure);
 };
@@ -63,7 +63,7 @@ const onChangePassword = function(event) {
     })
     .then(ui.success)
     .catch((error) => {
-      $("#warning3").text("Mistake !")
+      $("#warning3").text("Wrong password !")
     })
     .catch(ui.failure);
 };
